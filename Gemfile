@@ -18,10 +18,14 @@ gem "devise"
 
 gem 'devise-jwt'
 
+gem "jwt"
+
 gem "cancancan"
 
 gem 'rswag'
 
+
+gem 'active_model_serializers'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
@@ -51,6 +55,8 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'rspec-rails'
   gem 'rswag-specs'
+  gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 group :development do

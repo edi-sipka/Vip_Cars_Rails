@@ -39,7 +39,8 @@
 
 <!-- UML DIAGRAM-->
 ## :card_index: UML Diagram <a name="er-diagram"></a>
-![uml-diagram](uml diagram_capstone.JPG)
+![uml diagram_capstone](https://user-images.githubusercontent.com/95056164/212054673-c4da14a4-b401-4907-978e-5bf28a79de64.JPG)
+
 
 
 ## 🛠 Built With <a name="built-with">

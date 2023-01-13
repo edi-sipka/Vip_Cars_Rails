@@ -24,7 +24,7 @@ gem 'cancancan'
 
 gem 'rswag'
 
-gem 'active_model_serializers'
+gem 'active_model_serializers', '~> 0.10.13'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 gem 'parser'

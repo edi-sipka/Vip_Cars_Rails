@@ -1,18 +1,18 @@
 class Api::V1::CarsController < ApplicationController
-  before_action :show_car, only: [:show]
+  before_action :set_car, only: [:show]
 
   def index
     @cars = Car.all
-    render json: @cars
+    render json: @cars, status: :ok
   end
 
   def show
-    render json: @car
+    render json: @car, status: :ok
   end
 
   private
 
-  def show_car
+  def set_car
     @car = Car.find(params[:id])
   end
 end

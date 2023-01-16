@@ -1,17 +1,17 @@
-class Users::RegistrationsController < Devise::RegistrationsController
+class Api::V1::Users::RegistrationsController < Devise::RegistrationsController
   respond_to :json
 
   private
 
   def respond_with(resource, _opts = {})
-    resource.persisted? ? success : failed
+    resource.persisted? ? register_success : register_failed
   end
 
-  def success
+  def register_success
     render json: { message: 'Signed up' }
   end
 
-  def failed
+  def register_failed
     render json: { message: 'Failed to sign up' }
   end
 end

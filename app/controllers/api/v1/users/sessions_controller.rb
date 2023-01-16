@@ -4,7 +4,7 @@ class Api::V1::Users::SessionsController < Devise::RegistrationsController
   private
 
   def respond_with(_resource, _opts = {})
-    render json: { message: 'Logged.', user: current_user }, status: :ok
+    render json: { message: 'Logged in', user: current_user }, status: :ok
   end
 
   def respond_to_on_destroy
@@ -12,10 +12,10 @@ class Api::V1::Users::SessionsController < Devise::RegistrationsController
   end
 
   def log_out_success
-    render json: { message: 'Logged out.' }, status: :ok
+    render json: { message: 'Logged out' }, status: :ok
   end
 
   def log_out_failure
-    render json: { message: 'Logged out failure.' }, status: :unauthorized
+    render json: { message: 'Failed to logged out' }, status: :unauthorized
   end
 end

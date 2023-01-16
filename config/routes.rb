@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   mount Rswag::Api::Engine => '/api-docs'
   devise_for :users,
   controllers: {
-      sessions: 'api/v1/users/sessions',
-      registrations: 'api/v1/users/registrations'
+    registrations: 'api/v1/users/registrations',
+      sessions: 'api/v1/users/sessions'
   }
   namespace :api do
     namespace :v1 do

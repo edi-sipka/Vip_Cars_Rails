@@ -8,10 +8,10 @@ class Api::V1::Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def register_success
-    render json: { message: 'Signed up' }
+    render json: { status: 200, message: 'Signed up sucessfully.', data: UserSerializer.new(current_user) }, status: :ok
   end
 
   def register_failed
-    render json: { message: 'Failed to sign up' }
+    render json: { status: 422, message: "Signed up failure. #{resource.errors.full_messages.to_sentence}" }, status: :unprocessable_entity
   end
 end

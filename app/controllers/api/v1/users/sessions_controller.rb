@@ -9,12 +9,12 @@ class Api::V1::Users::SessionsController < Devise::SessionsController
 
   def log_in_success
     render json: { status: 200, message: 'Logged in sucessfully.', data: UserSerializer.new(current_user) }, status: :ok
-  end 
+  end
 
   def log_in_failed
     render json: { status: 401, message: "Logged in failed. #{_resource.errors.full_messages.to_sentence}", data: UserSerializer.new(current_user) }, status: :unauthorized
   end
-  
+
   def respond_to_on_destroy
     if request.headers['Authorization'].present?
       jwt_payload = JWT.decode(request.headers['Authorization'].split.last,
@@ -31,6 +31,6 @@ class Api::V1::Users::SessionsController < Devise::SessionsController
   end
 
   def log_out_failure
-    render json: {status: 401, message: 'Failed to logged out' }, status: :unauthorized
+    render json: { status: 401, message: 'Failed to logged out' }, status: :unauthorized
   end
 end

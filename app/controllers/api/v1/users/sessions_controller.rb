@@ -4,7 +4,7 @@ class Api::V1::Users::SessionsController < Devise::SessionsController
   private
 
   def respond_with(_resource, _opts = {})
-    current_user? ? log_in_success : log_in_failed
+    current_user ? log_in_success : log_in_failed
   end
 
   def log_in_success

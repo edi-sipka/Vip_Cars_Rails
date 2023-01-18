@@ -19,6 +19,16 @@ class Api::V1::CarsController < ApplicationController
   def show
     render json: @car, status: :ok
   end
+  def update
+    return render json: { error: 'You are not admin' }, status: :unauthorized unless @current_user.admin?
+
+    @car = Car.find(params[:id])
+    if @car.update(car_params)
+      render json: @car
+    else
+      render json: { error: 'Something is wrong' }, status: :bad_request
+    end
+  end
   def destroy
     return render json: { error: 'You are not allowed' }, status: :unauthorized unless @current_user.admin?
 

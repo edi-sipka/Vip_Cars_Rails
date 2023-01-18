@@ -3,6 +3,7 @@ class Api::V1::ReservationsController < ApplicationController
   def index
     render json: current_user.reservations.includes([:car]).order(id: :desc), status: :ok
   end
+
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user = @current_user
@@ -12,6 +13,7 @@ class Api::V1::ReservationsController < ApplicationController
       render json: { error: 'Something went wrong' }, status: :bad_request
     end
   end
+
   def destroy
     reservation = Reservation.find(params[:id])
 
@@ -25,7 +27,9 @@ class Api::V1::ReservationsController < ApplicationController
       render json: { error: 'ERROR: Unable to cancel the reservation' }, status: :unprocessable_entity
     end
   end
+
   private
+
   def reservation_params
     params.require(:reservation).permit(:reservation_date, :returning_date, :car_id)
   end

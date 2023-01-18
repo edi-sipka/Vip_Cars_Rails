@@ -1,9 +1,4 @@
-cars = Cars.create([
-{ name: 'BMW F10',
-  image: 'https://www.pngmart.com/files/22/BMW-F10-HD-Isolated.png',
-model: '2021',
-price: 140,
-description: 'The F10 is the model code BMW uses internally for the sixth-generation 5 series sedan, produced between 2010 and 2016'},
+cars = Car.create([
 {name: 'Renault Cio',
  image: 'https://www.pngmart.com/files/10/Renault-PNG-Image.png',
  model: 2018,
@@ -26,9 +21,8 @@ description: 'The Mercedes Viano was produced in september 2010,It is a minivan 
 name: 'BMW-5 Series',
 image: 'https://www.pngmart.com/files/3/BMW-X6-PNG-Transparent-Image.png',
 model: '2018',
-price: 150
-description: 'The 2018 BMW 5 Series finishes in the top third of our luxury midsize car rankings. It has a range of potent powertrains, enjoyable handling, an opulent interior, and a near-perfect predicted reliability rating.',
-},
+price: 150,
+description: 'The 2018 BMW 5 Series finishes in the top third of our luxury midsize car rankings. It has a range of potent powertrains, enjoyable handling, an opulent interior, and a near-perfect predicted reliability rating.'},
 {
 name: 'Chevrolet Camaro',
 image: 'https://www.pngmart.com/files/4/Chevrolet-Camaro-PNG-HD.png',
@@ -37,11 +31,11 @@ price: 210,
 description: 'A new version was introduced, with a 2.0-liter 4-cylinder engine that developed 275 hp and 400 Nm. This engine was mostly suitable for customer buying the Camaro for the muscular, beautiful exterior design more than for the power that came with it.',
 },
 {
-name: 'Base GLC 300 Coupe 4dr All-Wheel Drive 4MATIC',
+name: 'Base GLC 300 Coupe',
 image: 'https://mysterio.yahoo.com/mysterio/api/DB535FAFE97CDE8EA35CCEEEEBA187159BECE4D0CD490C55B3AF21BE66C93343/autoblog/resizefill_w788_h525;quality_80;format_webp;cc_31536000;/https://s.aolcdn.com/commerce/autodata/images/USD30MBS842A021001.jpg',
 model: '2023',
 price:220,
-description: 'The 2022 Mercedes-Benz GLC tempts with its svelte style, its relaxed demeanor, and its massive array of available features.
+description: 'The 2023 Mercedes-Benz GLC tempts with its svelte style, its relaxed demeanor, and its massive array of available features.
 Even with a slimmed-down lineup this year-Mercedes-Benz pushed the pause button on V-8 models-the turbo-4 GLC300 and the twin-turbo V-6 GLC43 AMG offer plenty of compelling reasons to shop the three-pointed star.',
 },
 {
@@ -49,7 +43,7 @@ name: 'Toyota Tundra Hybrid',
 image: 'https://mysterio.yahoo.com/mysterio/api/DE9E2BB059BF52C6EF59CF248FAE97DE1AA37AE4212AC2D25ED3A5D059B36135/autoblog/resizefill_w788_h525;quality_80;format_webp;cc_31536000;/https://s.aolcdn.com/commerce/autodata/images/USD30TOT13AA021001.jpg',
 model: '2022',
 price: 130,
-description: 'A redesigned Toyota Tundra is finally here for 2022. This is Toyota's full-size truck, and its new third generation is a welcome successor to the long-running second generation made from 2007 all the way to 2021. Recent versions of that old Tundra trailed behind the Chevrolet Silverado 1500, Ford F-150 and Ram 1500 in just about every category.
+description: 'A redesigned Toyota Tundra is finally here for 2022. This is Toyotas full-size truck, and its new third generation is a welcome successor to the long-running second generation made from 2007 all the way to 2021. Recent versions of that old Tundra trailed behind the Chevrolet Silverado 1500, Ford F-150 and Ram 1500 in just about every category.
 ',
 },
 {
@@ -71,7 +65,7 @@ name: 'Ford Fiesta',
 image: 'https://images.hgmsites.net/hug/2011-ford-fiesta-4-door-hb-ses-angular-front-exterior-view_100320226_h.jpg',
 model: '2012',
 price: 110,
-description: 'The 2012 Ford Fiesta's #7 ranking is based on its score within the 2012 Subcompact Cars category. The 2012 Ford Fiesta certainly isn't the most affordable small car, but especially if you consider the Fiesta's stylish appearance and surprisingly stout feature lists, it's one of the better ways to downsize—without feeling like you're moving downscale',
+description: 'The 2012 Ford Fiest 7 ranking is based on its score within the 2012 Subcompact Cars category. The 2012 Ford Fiesta certainly isnt the most affordable small car, but especially if you consider the Fiesta stylish appearance and surprisingly stout feature lists, its one of the better ways to downsize—without feeling like you are moving downscale',
 },
 {
 name: 'Toyota Touring Sports car',
@@ -85,7 +79,7 @@ name: 'Ford Mustang',
 image: 'https://images.hgmsites.net/lrg/2022-ford-mustang-ecoboost-premium-convertible-angular-front-exterior-view_100838229_l.jpg',
 model: '2022',
 price: 90,
-description: 'The Ford Mustang 2022 is a strong base engine, The Ford Mustang is a rear-wheel-drive, four-seat sports car that goes head-to-head with the Chevrolet Camaro and Dodge Challenger. It’s available in coupe and convertible body styles and five main trims: EcoBoost, EcoBoost Premium, GT, GT Premium and Mach 1. Besides the Mach 1, the other high-performance Mustang is the Shelby GT500.',
+description: 'The Ford Mustang 2022 is a strong base engine, The Ford Mustang is a rear-wheel-drive, four-seat sports car that goes head-to-head with the Chevrolet Camaro and Dodge Challenger. Its available in coupe and convertible body styles and five main trims: EcoBoost, EcoBoost Premium, GT, GT Premium and Mach 1. Besides the Mach 1, the other high-performance Mustang is the Shelby GT500.',
 },
 {
 name: 'Jeep Wrangler',

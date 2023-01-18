@@ -19,7 +19,16 @@ class Api::V1::CarsController < ApplicationController
   def show
     render json: @car, status: :ok
   end
+  def destroy
+    return render json: { error: 'You are not allowed' }, status: :unauthorized unless @current_user.admin?
 
+    @car = Car.find(params[:id])
+    if @car.destroy
+      render json: { id: @car.id, msg: 'Car deleted successfully' }
+    else
+      render json: { error: 'Something went wrong' }, status: :bad_request
+    end
+  end
   private
 
   def set_car

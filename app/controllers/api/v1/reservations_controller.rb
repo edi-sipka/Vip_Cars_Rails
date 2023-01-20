@@ -4,6 +4,7 @@ class Api::V1::ReservationsController < ApplicationController
     render json: current_user.reservations.includes([:car]).order(id: :desc), status: :ok
   end
   def create
+    
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
     if @reservation.save

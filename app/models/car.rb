@@ -1,7 +1,6 @@
 class Car < ApplicationRecord
+  has_many :reservations, dependent: :destroy
   has_many :users, through: :reservations, dependent: :destroy
-  has_many :reservatios, dependent: :destroy
-
   validates :name, presence: true
   validates :image, presence: true
   validates :model, presence: true

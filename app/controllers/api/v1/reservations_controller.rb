@@ -1,11 +1,13 @@
 class Api::V1::ReservationsController < ApplicationController
   before_action :authenticate_user!
+
   def index
     render json: current_user.reservations.includes([:car]).order(id: :desc), status: :ok
   end
+
   def create
     @reservation = Reservation.new(reservation_params)
-    @reservation.user = @current_user
+    @reservation.user = current_user
     if @reservation.save
       render json: @reservation
     else
@@ -30,6 +32,6 @@ class Api::V1::ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:reservation_date, :returning_date, :car_id)
+    params.require(:reservation).permit(:reservation_date, :returning_date, :car_id, :city)
   end
 end

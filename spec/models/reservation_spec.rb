@@ -14,3 +14,20 @@ RSpec.describe Reservation, type: :model do
       @reservation.save
       expect(@reservation).to be_valid
     end
+    it "Invalid without user_id" do
+      @reservation.user_id = nil 
+      @reservation.save
+      expect(@reservation).to_not be_valid
+    end
+  
+    it "Invalid without car_id" do
+    @reservation.car_id = nil 
+    @reservation.save
+    expect(@reservation).to_not be_valid
+  end
+  
+  it "Valid with city" do
+  @reservation.city = "Temisvar"
+  @reservation.save
+  expect(@reservation).to be_valid
+  end

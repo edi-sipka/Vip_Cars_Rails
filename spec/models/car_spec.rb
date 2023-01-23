@@ -9,7 +9,6 @@ RSpec.describe Car, type: :model do
                       description: 'Best car in a class.')
   end
 
-
   context 'Checking car values' do
     it 'Car name can not be null' do
       @car.name = nil

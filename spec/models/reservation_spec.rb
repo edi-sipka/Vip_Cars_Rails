@@ -31,3 +31,16 @@ RSpec.describe Reservation, type: :model do
   @reservation.save
   expect(@reservation).to be_valid
   end
+  it "Reservation date is today" do
+    @reservation.reservation_date = Date.today
+    @reservation.save
+    expect(@reservation).to be_valid
+      end
+    
+      it "Returning date can not be today" do
+        @reservation.returning_date = Date.today + 2.day
+        @reservation.save
+        expect(@reservation).to be_valid
+        end
+     end
+     

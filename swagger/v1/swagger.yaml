@@ -1,0 +1,323 @@
+---
+openapi: 3.0.1
+info:
+  title: VIP Cars API V1
+  version: v1
+paths: 
+"/api/v1/cars/":
+    get:
+      summary: List all cars
+      tags:
+      - All Cars
+      responses:
+        '200':
+          description: List of all cars
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    image:
+                      type: string
+                    model:
+                      type: string
+                    price:
+                      type: decimal
+                    description:
+                      type: text
+                   
+                  required:
+                  - id
+                  - name
+                  - image
+                  - model
+                  - price
+                  - description
+
+                   "/api/v1/cars":
+    post:
+      summary: Create a New Car
+      tags:
+      -Admin can only create a new car
+      parameters: []
+      responses:
+        '201':
+          description: Car created 
+        '401':
+          description: Unauthorized, only Admin can create a new car
+        '422':
+          description: Invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+                image:
+                  type: string
+                model:
+                  type: string
+                price:
+                  type: decimal
+                description:
+                  type: text
+              required:
+              - id
+              - name
+              - image
+              - model
+              - price
+              - description
+
+  "/api/v1/cars/{id}":
+   delete:
+      summary: Delete a car
+      tags:
+      - Only admin can delete a car
+      parameters:
+      - name: id
+        in: path
+        description: Car ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Car deleted 
+        '401':
+          description: Only admin can delete car
+        '404':
+          description: Car not found
+        '422':
+          description: Ivalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+                image:
+                  type: string
+                model:
+                  type: string
+                price:
+                  type: decimal
+                description:
+                  type: text
+              required:
+              - id
+              - name
+              - image
+              - model
+              - price
+              - description
+              
+               get:
+      summary: List car by ID
+      tags:
+      - Single car
+      parameters:
+      - name: id
+        in: path
+        description: Car ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Display specific car
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  image:
+                    type: string
+                  model:
+                    type: string
+                  price:
+                    type: decimal
+                  description:
+                    type: text
+                required:
+                - id
+                - name
+                - image
+                - model
+                - price
+                - description
+               
+    "/api/v1/users/{user_id}/reservations":
+    post:
+      summary: Display reservations
+      tags:
+      - Users reservations
+      parameters:
+      - name: user_id
+        in: path
+        description: Current User ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Display car reservation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    reservation_date:
+                      type: datetime
+                    returning_date:
+                      type: datetime
+                    car:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        image:
+                          type: string
+                        model:
+                          type: string
+                        price:
+                          type: decimal
+                        description:
+                          type: string
+                      required:
+                      - id
+                      - name
+                      - image
+                      - model
+                      - price
+                      - description
+                  required:
+                  - id
+                  - reservation_date
+                  - returning_date
+                  - car     
+"/api/v1/users/{user_id}/reservations/{id}":
+    delete:
+      summary: Delete a car reservation
+      tags:
+      - Delete Car Reservation
+      parameters:
+      - name: user_id
+        in: path
+        description: Current User ID
+        required: true
+        schema:
+          type: integer
+      - name: id
+        in: path
+        description: Reservation ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Reservation deleted successfully
+        '401':
+          description: Sign up
+        '404':
+          description: Could not find reservation with specific id
+
+           "/api/v1/lsigin":
+    post:
+      summary: Sign in 
+      tags:
+      - Sign in
+      parameters: []
+      responses:
+        '200':
+          description: Signed in succesfully
+        '401':
+          description: Failed in sign in
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - email
+              - password
+  "/api/v1/logout":
+    delete:
+      summary: Sign out 
+      tags:
+      - Signout
+      parameters:
+      - name: Authorization
+        in: header
+        description: Authorization JWT Token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Logged out successfully
+        '401':
+          description: Invalid authorization token
+  "/api/v1/signup":
+    post:
+      summary: Sign Up
+      tags:
+      - Sign Up
+      parameters: []
+      responses:
+        '200':
+          description: Signed up successfully
+        '422':
+          description: Invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                password_confirmation:
+                  type: string
+              required:
+              - name
+              - email
+              - password
+              - password_confirmation
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

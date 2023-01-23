@@ -27,5 +27,10 @@ RSpec.describe User, type: :model do
       @user.save
       expect(@user).to_not be_valid
     end
+    it 'Default role is 0' do
+      @user.role = 0
+      @user.save
+      expect(@user).to be_valid
+    end
   end
 end

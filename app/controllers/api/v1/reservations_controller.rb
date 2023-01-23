@@ -3,13 +3,17 @@ class Api::V1::ReservationsController < ApplicationController
 
   def index
     render json: current_user.reservations.includes([:car]).order(id: :desc), status: :ok
-  end\
+  end
 
   def create
-    @reservation = Reservation.new(reservation_params)
-    @reservation.user = current_user
-    if @reservation.save
-      render json: @reservation
+    reservation = Reservation.new(reservation_params)
+    reservation.user = current_user
+    if reservation.save
+      render json: {
+        status: 201,
+        message: "Reservation is created",
+        data: ReservationSerializer.new(reservation)
+      }, status: :created
     else
       render json: { error: 'Something went wrong' }, status: :bad_request
     end

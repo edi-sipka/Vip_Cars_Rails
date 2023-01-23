@@ -21,4 +21,25 @@ it "Checking car price" do
     expect(@car).to be_valid
 end
 end
+it 'False if there is no image' do
+  @car.image = nil
+  expect(@car).to_not be_valid
+end
+
+it 'Car model should not be nil' do
+  @car.model = nil
+  expect(@car).to_not be_valid
+end
+
+context 'Testing Associations' do
+it 'belongs_to a user' do
+  assoc = Reservation.reflect_on_association(:user)
+  expect(assoc.macro).to eq :belongs_to
+end
+
+it 'belongs_to a car' do
+  assoc = Reservation.reflect_on_association(:car)
+  expect(assoc.macro).to eq :belongs_to
+end
+end
 end

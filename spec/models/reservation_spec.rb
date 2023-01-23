@@ -43,4 +43,15 @@ RSpec.describe Reservation, type: :model do
         expect(@reservation).to be_valid
         end
      end
-     
+     context 'Testing Reservation Associations' do
+      it 'has_many reservations' do
+        assoc = Car.reflect_on_association(:reservations)
+        expect(assoc.macro).to eq :has_many
+      end
+  
+      it 'has_many cars ' do
+        assoc = Car.reflect_on_association(:users)
+        expect(assoc.macro).to eq :has_many
+      end
+  end
+end

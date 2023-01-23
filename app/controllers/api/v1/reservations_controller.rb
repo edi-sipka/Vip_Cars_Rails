@@ -11,7 +11,7 @@ class Api::V1::ReservationsController < ApplicationController
     if reservation.save
       render json: {
         status: 201,
-        message: "Reservation is created",
+        message: 'Reservation is created',
         data: ReservationSerializer.new(reservation)
       }, status: :created
     else

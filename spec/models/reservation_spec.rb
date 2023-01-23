@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Reservation, type: :model do
   before :each do
     @user = User.create(name: 'Edi', email: 'edi@gmail.com', password: '123123')
@@ -10,4 +8,9 @@ RSpec.describe Reservation, type: :model do
         description: 'Best car in a class.')
 @reservation = Reservation.new(user: @user, car: @car, reservation_date: Date.today, returning_date: Date.today + 2.day, city:"Casablanca")
   end
-end
+
+  context 'Testing' do
+    it 'Valid user reservation' do
+      @reservation.save
+      expect(@reservation).to be_valid
+    end

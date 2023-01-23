@@ -8,4 +8,17 @@ RSpec.describe Car, type: :model do
         price: 130,
         description: 'Best car in a class.') 
   end
+
+
+   context 'Checking car values' do
+    it 'Car name can not be null' do
+      @car.name = nil
+      expect(@car).to_not be_valid
+end
+
+it "Checking car price" do
+    @car.price = 130
+    expect(@car).to be_valid
+end
+end
 end

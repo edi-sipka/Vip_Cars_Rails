@@ -2,7 +2,6 @@
 
 <div align="center">
 
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
 </div>
@@ -92,6 +91,10 @@
 
 - Check here API documentation [VIP cars API](https://app.swaggerhub.com/templates-docs/EDISIPKA/VIP_Cars_Api/v1#/)
 
+<!-- React Frontend -->
+## <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/539px-React-icon.svg.png" width="23" height="20"/> React Frontend <a name="react-frontend"></a>
+- Frontend part of the project [VIP_Cars_Frontend](https://github.com/edi-sipka/Vip_Cars_React)
+
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
@@ -122,7 +125,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone https://github.com/edi-sipka.git
+  git clone https://github.com/edi-sipka/Vip_Cars_Rails
 ```
 
 ### Install
@@ -168,29 +171,30 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Edi Sipka**
+👤 _Edi Sipka_
 
-- GitHub: [@githubhandle](https://github.com/edi-sipka)
-- Twitter: [@twitterhandle]()
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/edi-sipka)
+- GitHub: [@Edi-Sipka](https://github.com/edi-sipka)
+- Twitter: [@sipka_edii](https://twitter.com/sipka_edii)
+- LinkedIn: [Edi Sipka](https://www.linkedin.com/in/edi-%C5%A1ipka-5b681b202/)
+
 
 👤 **Praises Tula**
 
-- GitHub: [@githubhandle](https://github.com/PraisesPJMT)
-- Twitter: [@twitterhandle](https://twitter.com/PraisesPJMT)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/praises-tula-9233aa76)
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PraisesPJMT/)
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/praises-tula/)
+[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/PraisesPJMT/)
 
 👤 **Nonhlanhla**
 
 - GitHub: [@githubhandle](https://github.com/29td)
-- Twitter: [@twitterhandle](https://twitter.com/NonhlanhlaMnde6)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/nonhlanhla-mndebele-ab7448226/)
 
-👤 **Youta Lactio Christabelle**
 
-- GitHub: [@githubhandle](https://github.com/Christabelle143)
-- Twitter: [@twitterhandle](https://twitter.com/christabelleyo)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/youta-christabelle-124b45232/)
+👤 **Youta Christabelle**
+
+- GitHub: [Christabelle143](https://github.com/Christabelle143)
+- Twitter: [@christabelleyo](https://twitter.com/christabelleyo)
+- LinkedIn: [YoutaChristabelle](https://linkedin.com/in/YoutaChristabelle)
 
 👤 **Okolike Assumpta**
 
@@ -213,7 +217,7 @@ Example:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/summyalena/Recipe-app/issues/new).
+Feel free to check the [issues page](https://github.com/edi-sipka/Vip_Cars_Rails/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -233,6 +237,8 @@ I would like to acknowledge:
 
 - [Microverse](https://www.microverse.org/) for the opportunity to work on this project
 - [The creative common](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) for the design
+- Design from [Murat Korkmaz on Behance](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

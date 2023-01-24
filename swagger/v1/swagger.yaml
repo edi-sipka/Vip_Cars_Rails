@@ -3,15 +3,112 @@ openapi: 3.0.1
 info:
   title: VIP Cars API V1
   version: v1
-paths: 
-"/api/v1/cars/":
+paths:
+
+  "/api/v1/signin":
+    post:
+      summary: Sign in 
+      tags:
+      - Sign in 
+      parameters: []
+      responses:
+        '200':
+          description: Signed in succesfully
+        '401':
+          description: Failed in sign in
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - email
+              - password
+  "/api/v1/logout":
+    delete:
+      summary: Sign out 
+      tags:
+      - Sign out 
+      parameters:
+      - name: Authorization
+        in: header
+        description: Authorization JWT Token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Logged out successfull
+        '401':
+          description: Invalid authorization token
+  "/api/v1/signup":
+    post:
+      summary: Sign Up
+      tags:
+      - Sign Up
+      parameters: []
+      responses:
+        '200':
+          description:  Signed up successfully
+        '422':
+          description: Invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                password_confirmation:
+                  type: string
+              required:
+              - name
+              - email
+              - password
+              - password_confirmation
+  "/api/v1/users/":
+    get:
+      summary: Show Current User
+      tags:
+      - Current User
+      responses:
+        '200':
+          description: Current User 
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  email:
+                    type: string
+                required:
+                - id
+                - name
+                - email
+        '401':
+          description: You must Login or Register.
+
+  "/api/v1/cars/":
     get:
       summary: List all cars
       tags:
       - All Cars
       responses:
         '200':
-          description: List of all cars
+          description: List of all cars found
           content:
             application/json:
               schema:
@@ -28,10 +125,9 @@ paths:
                     model:
                       type: string
                     price:
-                      type: decimal
+                      type: integer
                     description:
-                      type: text
-                   
+                      type: string
                   required:
                   - id
                   - name
@@ -39,12 +135,11 @@ paths:
                   - model
                   - price
                   - description
-
-                   "/api/v1/cars":
+  "/api/v1/cars":
     post:
-      summary: Create a New Car
+      summary: Admin can only create a new car
       tags:
-      -Admin can only create a new car
+      -  Create a New Car 
       parameters: []
       responses:
         '201':
@@ -68,9 +163,10 @@ paths:
                 model:
                   type: string
                 price:
-                  type: decimal
+                  type: integer
                 description:
-                  type: text
+                  type: string
+               
               required:
               - id
               - name
@@ -78,12 +174,12 @@ paths:
               - model
               - price
               - description
-
+              
   "/api/v1/cars/{id}":
-   delete:
-      summary: Delete a car
+    delete:
+      summary: Only admin can delete a car
       tags:
-      - Only admin can delete a car
+      -  Delete a car
       parameters:
       - name: id
         in: path
@@ -115,9 +211,9 @@ paths:
                 model:
                   type: string
                 price:
-                  type: decimal
+                  type: integer
                 description:
-                  type: text
+                  type: string
               required:
               - id
               - name
@@ -126,10 +222,10 @@ paths:
               - price
               - description
               
-               get:
-      summary: List car by ID
+    get:
+      summary: List Specific Car
       tags:
-      - Single car
+      - Detail page for specific car
       parameters:
       - name: id
         in: path
@@ -139,7 +235,7 @@ paths:
           type: integer
       responses:
         '200':
-          description: Display specific car
+          description: Single car id displayed
           content:
             application/json:
               schema:
@@ -154,9 +250,9 @@ paths:
                   model:
                     type: string
                   price:
-                    type: decimal
+                    type: integer
                   description:
-                    type: text
+                    type: string
                 required:
                 - id
                 - name
@@ -164,12 +260,12 @@ paths:
                 - model
                 - price
                 - description
-               
-    "/api/v1/users/{user_id}/reservations":
-    post:
-      summary: Display reservations
+                
+  "/api/v1/users/{user_id}/reservations":
+    get:
+      summary: Get user car reservations
       tags:
-      - Users reservations
+      - Display all users reservations
       parameters:
       - name: user_id
         in: path
@@ -205,7 +301,7 @@ paths:
                         model:
                           type: string
                         price:
-                          type: decimal
+                          type: integer
                         description:
                           type: string
                       required:
@@ -219,12 +315,48 @@ paths:
                   - id
                   - reservation_date
                   - returning_date
-                  - car     
-"/api/v1/users/{user_id}/reservations/{id}":
-    delete:
-      summary: Delete a car reservation
+                  - car
+        '401':
+          description: You must Login or Register.
+    post:
+      summary: Reserve A car
       tags:
-      - Delete Car Reservation
+      - Create Car Reservation
+      parameters:
+      - name: user_id
+        in: path
+        description: Current User ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        '201':
+          description: Reservation created
+        '401':
+          description: You need to Sign in before continuing
+        '422':
+          description: Invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reservation_date:
+                  type: datetime
+                returning_date:
+                  type: datetime
+                car_id:
+                  type: integer
+              required:
+              - reservation_date
+              - returning_date
+              - car_id
+  "/api/v1/users/{user_id}/reservations/{id}":
+    delete:
+      summary: Delete Car Reservation
+      tags:
+      - Delete a car reservation
       parameters:
       - name: user_id
         in: path
@@ -242,82 +374,12 @@ paths:
         '200':
           description: Reservation deleted successfully
         '401':
-          description: Sign up
+          description: You need to Sign in before continuing
         '404':
           description: Could not find reservation with specific id
 
-           "/api/v1/lsigin":
-    post:
-      summary: Sign in 
-      tags:
-      - Sign in
-      parameters: []
-      responses:
-        '200':
-          description: Signed in succesfully
-        '401':
-          description: Failed in sign in
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                password:
-                  type: string
-              required:
-              - email
-              - password
-  "/api/v1/logout":
-    delete:
-      summary: Sign out 
-      tags:
-      - Signout
-      parameters:
-      - name: Authorization
-        in: header
-        description: Authorization JWT Token
-        schema:
-          type: string
-      responses:
-        '200':
-          description: Logged out successfully
-        '401':
-          description: Invalid authorization token
-  "/api/v1/signup":
-    post:
-      summary: Sign Up
-      tags:
-      - Sign Up
-      parameters: []
-      responses:
-        '200':
-          description: Signed up successfully
-        '422':
-          description: Invalid request
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                email:
-                  type: string
-                password:
-                  type: string
-                password_confirmation:
-                  type: string
-              required:
-              - name
-              - email
-              - password
-              - password_confirmation
 servers:
 - url: https://{defaultHost}
   variables:
     defaultHost:
-      default: www.example.com
+      default: https://localhost:3000/api/v1

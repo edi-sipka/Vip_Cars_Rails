@@ -98,7 +98,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo]()
+- [Live Demo](https://vip-cars-rental.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -137,6 +137,13 @@ Install this project with:
 
   bundle install
 ```
+### Important steps after installing project to local machine
+
+1) Please add .env file with devise secret key. 
+2) Please run rails db:seed for gathering all the cars.
+3) Please run rails db:create and rails db:migrate.
+4) Check Ruby version and database.yml file. ( Insert your password if there is required)
+5) Login for admin is: (email: admin@gmail.com ; password : 123123)
 
 ### Usage
 

@@ -27,7 +27,7 @@ Its handling and engine power are good enough to provide an entertaining driving
 },
 {name: 'Mercedes Viano',
  image: 'https://stimg.cardekho.com/images/carexteriorimages/630x420/Mercedes-Benz/Mercedes-Benz-Viano/2680/1562819292786/front-left-side-47.jpg',
- model: Viano,
+ model: 'Viano',
  price: 120,
 description: 'The Mercedes Viano was produced in september 2010.
 It is a minivan and has an internal combustion engine. It uses diesel and has up to 224Hp power.'

@@ -88,3 +88,4 @@ production:
   database: vip_cars_production
   username: vip_cars
   password: <%= ENV["VIP_CARS_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>

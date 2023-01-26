@@ -16,6 +16,7 @@
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
   - [🗎 API Documentation](#api-docs)  
+  - [🗎 Kanban Board](#kanban-board) 
   - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
@@ -90,6 +91,19 @@
 ## 🗎 API Documentation <a name="api-docs"></a>
 
 - Check here API documentation [VIP cars API](https://app.swaggerhub.com/templates-docs/EDISIPKA/VIP_Cars_Api/v1#/)
+
+<!-- Kanban Board -->
+## <img src="https://cdn-icons-png.flaticon.com/512/5360/5360804.png" width="23" height="20"/> Kanban Board <a name="kanban-board"></a>
+- We are a group of 5 team members, and our Kanban board is diveded in two parts: 
+-- Frontend 
+-- Backend
+
+- Check here Kanban Board [Kanban Board](https://github.com/users/edi-sipka/projects/3) 
+
+- Check here Kanban Board Backend screenshot: [Kanban Board Backend](https://prnt.sc/tbnaJrPgezh0) 
+- Check here Kanban Board Frontend screenshot: [Kanban Board Frontend](https://prnt.sc/egjQAW-izqi0) 
+
+
 
 <!-- React Frontend -->
 ## <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/539px-React-icon.svg.png" width="23" height="20"/> React Frontend <a name="react-frontend"></a>
